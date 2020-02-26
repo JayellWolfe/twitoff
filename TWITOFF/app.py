@@ -1,12 +1,12 @@
 """code for our app"""
-
-from flask import Flask
+from decouple import config
+from flask import Flask, render_template, request
 from .models import DB
 
 #make app factory
 def create_app():
     app = Flask(__name__)
-    
+
     #add config for database
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     #have the database know about the app
@@ -14,5 +14,5 @@ def create_app():
 
     @app.route('/')
     def root():
-        return "Welcome to Twitoff!!"
+        return render_template('base.html')
     return app
