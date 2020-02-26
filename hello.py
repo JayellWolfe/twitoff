@@ -12,8 +12,8 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 #Make a second route
-@app.route("/about")
+#@app.route("/about")
 
 #Now make the function that goes with about
-def preds():
-    return render_template('about.html')
+#def preds():
+    #return render_template('about.html')
